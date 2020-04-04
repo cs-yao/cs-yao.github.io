@@ -90,7 +90,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cs-yao.github.io/2020/04/04/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2/" data-id="ck8ltg2qr0003y8vqdvqsgl02" class="article-share-link">Share</a>
+      <a data-url="http://cs-yao.github.io/2020/04/04/%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2/" data-id="ck8lu1ewz0001q8vqbeprhpw3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,6 +131,11 @@
 
 <p><img src="/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200404231238548.png" alt="image-20200404231238548"></p>
 <p>运行成功，访问localhost:4000可以看到默认效果。</p>
+<p>博客的配置文件在博客根目录下的_config.yml文件中，大部分都在此文件中配置。以下配置标题作者等：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">程式垚</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">keywords:</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">cs-yao</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-cn</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
+
+<p>效果如下:</p>
+<p><img src="/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405002834945.png" alt="image-20200405002834945"></p>
 <h4 id="新建博客"><a href="#新建博客" class="headerlink" title="新建博客"></a>新建博客</h4><p>尝试效果，先新建一个简单的博客看看。使用vscode打开博客目录（或者先博客目录新开一个powershell），在控制终端输入以下命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new 新的博客</span><br><span class="line"><span class="meta">#</span><span class="bash"> INFO  Created: D:\github\blog\<span class="built_in">source</span>\_posts\新的博客.md</span></span><br></pre></td></tr></table></figure>
 
@@ -139,12 +144,24 @@
 <p>其中信息见名如意。刷新localhost:4000可以看到新文章的出现。</p>
 <p><img src="/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200404233438596.png" alt="image-20200404233438596"></p>
 <p>基本操作如此，接下来是配置与发布。</p>
-<p>####发布</p>
+<h4 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h4><h5 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h5><p>在github上新建一个名为<user-name>.github.io的公共仓库，<user-name>就是你的用户名。</user-name></user-name></p>
+<p><img src="/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405000853684.png" alt="image-20200405000853684"></p>
+<h5 id="配置发布地址"><a href="#配置发布地址" class="headerlink" title="配置发布地址"></a>配置发布地址</h5><p>在博客根目录下的_config.yml文件中配置发布信息，如下</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/cs-yao/cs-yao.github.io</span> <span class="comment"># 你的仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span>  <span class="comment">#分支</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="安装git插件"><a href="#安装git插件" class="headerlink" title="安装git插件"></a>安装git插件</h5><p>发布到git需要git插件支持</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h5 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>编译后和输入github用户名密码，等待完成。</p>
+<p>就可以在<user-name>.github.io上看到发布的博客了。</user-name></p>
+<p><img src="/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405002532239.png" alt="image-20200405002532239"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cs-yao.github.io/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="ck8ltg2qm0001y8vq83ok9tey" class="article-share-link">Share</a>
+      <a data-url="http://cs-yao.github.io/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" data-id="ck8lu1ex30003q8vqcmr3b5ik" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github-gitee/" rel="tag">hexo,github,gitee</a></li></ul>
@@ -195,7 +212,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cs-yao.github.io/2020/04/04/Database/hello-world/" data-id="ck8ltg2rb0007y8vq768c3mmf" class="article-share-link">Share</a>
+      <a data-url="http://cs-yao.github.io/2020/04/04/Database/hello-world/" data-id="ck8lu1exs0007q8vqgghkg5pe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://cs-yao.github.io/2020/04/04/hello-world/" data-id="ck8ltg2qg0000y8vq577xbfg2" class="article-share-link">Share</a>
+      <a data-url="http://cs-yao.github.io/2020/04/04/hello-world/" data-id="ck8lu1ewt0000q8vqag8u9h3v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
