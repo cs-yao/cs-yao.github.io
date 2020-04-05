@@ -126,7 +126,7 @@
         <p>Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不如Typora。而Hexo是使用markdown编辑博客.使用Hexo搭建个人博客，将编写的Markdow笔记以博客的形式发布到Github等上面。除了可以更方便的总结个人知识，还可以分享知识和展示自我。一举多得。</p>
 <p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo官网</a></p>
 <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>环境依赖nodejs和git。以下命令皆在Windows的PowerShell中运行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装hexo，建议使用npm的阿里镜像来安装。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> cnpm相当于npm --registry=https://registry.npm.taobao.org</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> $ npm install -g cnpm --registry=https://registry.npm.taobao.org </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> $ cnpm install hexo-cli -g</span></span><br><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 安装hexo，建议使用npm的阿里镜像来安装。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> cnpm相当于npm --registry=https://registry.npm.taobao.org</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> $ npm install -g cnpm --registry=https://registry.npm.taobao.org </span></span><br><span class="line">npm install hexo-cli -g # 使用cnpm替换： cnpm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
 <h4 id="初始化博客程序"><a href="#初始化博客程序" class="headerlink" title="初始化博客程序"></a>初始化博客程序</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在需要存放的目录执行以下命令，blog为自定义的目录</span></span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
@@ -144,6 +144,7 @@
 <p><img src="/2020/04/01/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200404233248469.png" alt="image-20200404233248469"></p>
 <p>其中信息见名如意。刷新localhost:4000可以看到新文章的出现。</p>
 <p><img src="/2020/04/01/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200404233438596.png" alt="image-20200404233438596"></p>
+<h4 id="删除博客"><a href="#删除博客" class="headerlink" title="删除博客"></a>删除博客</h4><p>只需要删除文件即可。</p>
 <h4 id="文章图片"><a href="#文章图片" class="headerlink" title="文章图片"></a>文章图片</h4><p>如果使用本地图片作为博客图片的话，需要使用图片插件（或者使用hexo3以上的图片语法，typora不支持，pass）</p>
 <ol>
 <li><p>安装插件</p>
