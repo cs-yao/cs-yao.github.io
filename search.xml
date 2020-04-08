@@ -22,6 +22,97 @@
       </tags>
   </entry>
   <entry>
+    <title>基于Next主题持续优化个人博客</title>
+    <url>/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>Hexo默认主题太简单，功能比较少，需要变更主题，最流行的主题是Next，样式简单，基本功能都有。更换主题很简单。</p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>Hexo官网中有很多推荐主题（<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题</a>），在其中搜索Next，可以查看示例（版本发布说明）与进入github代码库。</p>
+<p>进入Github下载上一个稳定版本，<a href="https://github.com/theme-next/hexo-theme-next/tags" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/tags</a>，我下载的是7.7.2版本。</p>
+<img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405221102474.png" alt="image-20200405221102474" style="zoom:50%;">
+
+<p>下载后，解压到博客目录下的themes目录内，blog/themes/next-7.7.2。然后变更主配置文件的theme</p>
+<figure class="highlight yml"><figcaption><span>blog/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next-7.7.2</span></span><br></pre></td></tr></table></figure>
+
+<p>重启Hexo服务，查看效果（我已经在主配置中修改了博客名：解思垚）：</p>
+<p><img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405225450089.png" alt="image-20200405225450089"></p>
+<a id="more"></a>
+
+<h2 id="配置Next"><a href="#配置Next" class="headerlink" title="配置Next"></a>配置Next</h2><p>配置参考：<a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">Next-Getting-Started</a></p>
+<h3 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h3><figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span> <span class="comment">#左小右大</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405231749022.png" alt="image-20200405231749022"></p>
+<h3 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page tags # INFO  Created: D:\github\blog\source\tags\index.md</span><br></pre></td></tr></table></figure>
+
+<p>在新建的blog/source/tags/index.md中修改标签页</p>
+<figure class="highlight markdown"><figcaption><span>source/tags/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-04-05 23:03:46</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>将标签页加到菜单中</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
+
+<p>|| 前是目录，|| 后是图标</p>
+<p>tag添加在文章的头部说明中。</p>
+<h3 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h3><p>分类和标签类似，略</p>
+<h3 id="添加图册"><a href="#添加图册" class="headerlink" title="添加图册"></a>添加图册</h3><p>类似分类和标签。</p>
+<ol>
+<li><p>添加画册页</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page photos # INFO  Created: D:\github\blog\source\photos\index.md</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改画册页信息</p>
+<p>图片路径使用线段目录，事先复制了图片都该目录</p>
+<figure class="highlight markdown"><figcaption><span>blog/source/photos/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 相册</span><br><span class="line">date: 2020-04-06 01:22:10</span><br><span class="line">layout: post</span><br><span class="line">photos:</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将画册页添加到菜单中</p>
+<p>菜单名添加到在i18n中，比如zh-CN：</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/languages/zh-CN.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">首页</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">归档</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">分类</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">标签</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">关于</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">搜索</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">日程表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">站点地图</span></span><br><span class="line">  <span class="attr">commonweal:</span> <span class="string">公益</span> <span class="number">404</span></span><br><span class="line">  <span class="attr">photos:</span> <span class="string">相册</span></span><br></pre></td></tr></table></figure>
+
+<p>添加到菜单：</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="attr">photos:</span> <span class="string">/photos/</span> <span class="string">||</span> <span class="string">photo</span></span><br></pre></td></tr></table></figure>
+
+<p>相册更好的展现，最方便的是使用插件，比如：JustifiedGallery</p>
+</li>
+</ol>
+<h2 id="侧边栏配置"><a href="#侧边栏配置" class="headerlink" title="侧边栏配置"></a>侧边栏配置</h2><p>参考 <a href="https://theme-next.org/docs/theme-settings/sidebar" target="_blank" rel="noopener">侧边栏配置</a></p>
+<h3 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h3><p>指定图片路径，头像复制到next-7.7.2/source/images下</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/my-avatar.jpg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="滚动条"><a href="#滚动条" class="headerlink" title="滚动条"></a>滚动条</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar. 是否在侧边栏显示</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button. 百分比</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>参考 <a href="https://theme-next.org/docs/third-party-services/search-services" target="_blank" rel="noopener">搜索服务</a></p>
+<ol>
+<li><p>添加插件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加主配置支持，在主配置文件中添加如下内容：</p>
+<figure class="highlight yml"><figcaption><span>blog/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加Next支持，在next配置文件中开启本地搜索：</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="string">ture</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="画廊"><a href="#画廊" class="headerlink" title="画廊"></a>画廊</h3><p>文章内图片支持浮现，但会显示图片标题</p>
+<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>目前的功能够用了，如果修改后续更新。修改的话可能就要换个主题了，比如:icarus</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>在文中插入</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ico"><a href="#ico" class="headerlink" title="ico"></a>ico</h3><figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>其他参考，<a href="https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html</a></p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新的文章</title>
+    <url>/2020/04/04/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p><img src="/2020/04/04/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/image-20200405004804814.png" alt="Typora图片保存设置"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用Hexo搭建个人博客</title>
     <url>/2020/04/04/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>Markdown文件是很方便的笔记工具，但云笔记对其的支持都远不如Typora。而Hexo是使用markdown编辑博客.使用Hexo搭建个人博客，将编写的Markdow笔记以博客的形式发布到Github等上面。除了可以更方便的总结个人知识，还可以分享知识和展示自我。一举多得。</p>
@@ -127,96 +218,5 @@
         <tag>github</tag>
         <tag>gitee</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>基于Next主题持续优化个人博客</title>
-    <url>/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>Hexo默认主题太简单，功能比较少，需要变更主题，最流行的主题是Next，样式简单，基本功能都有。更换主题很简单。</p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>Hexo官网中有很多推荐主题（<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo主题</a>），在其中搜索Next，可以查看示例（版本发布说明）与进入github代码库。</p>
-<p>进入Github下载上一个稳定版本，<a href="https://github.com/theme-next/hexo-theme-next/tags" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/tags</a>，我下载的是7.7.2版本。</p>
-<img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405221102474.png" alt="image-20200405221102474" style="zoom:50%;">
-
-<p>下载后，解压到博客目录下的themes目录内，blog/themes/next-7.7.2。然后变更主配置文件的theme</p>
-<figure class="highlight yml"><figcaption><span>blog/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next-7.7.2</span></span><br></pre></td></tr></table></figure>
-
-<p>重启Hexo服务，查看效果（我已经在主配置中修改了博客名：解思垚）：</p>
-<p><img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405225450089.png" alt="image-20200405225450089"></p>
-<a id="more"></a>
-
-<h2 id="配置Next"><a href="#配置Next" class="headerlink" title="配置Next"></a>配置Next</h2><p>配置参考：<a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">Next-Getting-Started</a></p>
-<h3 id="修改样式"><a href="#修改样式" class="headerlink" title="修改样式"></a>修改样式</h3><figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span> <span class="comment">#左小右大</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2020/04/05/%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20200405231749022.png" alt="image-20200405231749022"></p>
-<h3 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page tags # INFO  Created: D:\github\blog\source\tags\index.md</span><br></pre></td></tr></table></figure>
-
-<p>在新建的blog/source/tags/index.md中修改标签页</p>
-<figure class="highlight markdown"><figcaption><span>source/tags/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2020-04-05 23:03:46</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>将标签页加到菜单中</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
-
-<p>|| 前是目录，|| 后是图标</p>
-<p>tag添加在文章的头部说明中。</p>
-<h3 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h3><p>分类和标签类似，略</p>
-<h3 id="添加图册"><a href="#添加图册" class="headerlink" title="添加图册"></a>添加图册</h3><p>类似分类和标签。</p>
-<ol>
-<li><p>添加画册页</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page photos # INFO  Created: D:\github\blog\source\photos\index.md</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改画册页信息</p>
-<p>图片路径使用线段目录，事先复制了图片都该目录</p>
-<figure class="highlight markdown"><figcaption><span>blog/source/photos/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 相册</span><br><span class="line">date: 2020-04-06 01:22:10</span><br><span class="line">layout: post</span><br><span class="line">photos:</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line"><span class="bullet">- </span>../images/my-avatar.jpg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将画册页添加到菜单中</p>
-<p>菜单名添加到在i18n中，比如zh-CN：</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/languages/zh-CN.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">首页</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">归档</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">分类</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">标签</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">关于</span></span><br><span class="line">  <span class="attr">search:</span> <span class="string">搜索</span></span><br><span class="line">  <span class="attr">schedule:</span> <span class="string">日程表</span></span><br><span class="line">  <span class="attr">sitemap:</span> <span class="string">站点地图</span></span><br><span class="line">  <span class="attr">commonweal:</span> <span class="string">公益</span> <span class="number">404</span></span><br><span class="line">  <span class="attr">photos:</span> <span class="string">相册</span></span><br></pre></td></tr></table></figure>
-
-<p>添加到菜单：</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="attr">photos:</span> <span class="string">/photos/</span> <span class="string">||</span> <span class="string">photo</span></span><br></pre></td></tr></table></figure>
-
-<p>相册更好的展现，最方便的是使用插件，比如：JustifiedGallery</p>
-</li>
-</ol>
-<h2 id="侧边栏配置"><a href="#侧边栏配置" class="headerlink" title="侧边栏配置"></a>侧边栏配置</h2><p>参考 <a href="https://theme-next.org/docs/theme-settings/sidebar" target="_blank" rel="noopener">侧边栏配置</a></p>
-<h3 id="头像"><a href="#头像" class="headerlink" title="头像"></a>头像</h3><p>指定图片路径，头像复制到next-7.7.2/source/images下</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/images/my-avatar.jpg</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  <span class="attr">rounded:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="滚动条"><a href="#滚动条" class="headerlink" title="滚动条"></a>滚动条</h3><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">back2top:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar. 是否在侧边栏显示</span></span><br><span class="line">  <span class="attr">sidebar:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button. 百分比</span></span><br><span class="line">  <span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p>参考 <a href="https://theme-next.org/docs/third-party-services/search-services" target="_blank" rel="noopener">搜索服务</a></p>
-<ol>
-<li><p>添加插件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加主配置支持，在主配置文件中添加如下内容：</p>
-<figure class="highlight yml"><figcaption><span>blog/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加Next支持，在next配置文件中开启本地搜索：</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="string">ture</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><h3 id="画廊"><a href="#画廊" class="headerlink" title="画廊"></a>画廊</h3><p>文章内图片支持浮现，但会显示图片标题</p>
-<figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>目前的功能够用了，如果修改后续更新。修改的话可能就要换个主题了，比如:icarus</p>
-<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>在文中插入</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="ico"><a href="#ico" class="headerlink" title="ico"></a>ico</h3><figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>其他参考，<a href="https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html</a></p>
-]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新的文章</title>
-    <url>/2020/04/04/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p><img src="/2020/04/04/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/image-20200405004804814.png" alt="Typora图片保存设置"></p>
-]]></content>
   </entry>
 </search>
