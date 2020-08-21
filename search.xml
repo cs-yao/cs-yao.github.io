@@ -102,9 +102,9 @@
 <figure class="highlight plain"><figcaption><span>source/cname</span></figcaption><table><tr><td class="code"><pre><span class="line">pal.pub</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>在主配置文件中填写域名地址：</li>
+<li>在主配置文件中修改域名地址：（非必须步骤）</li>
 </ol>
-<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://pal.pub</span> <span class="comment"># 不是必须</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">http://pal.pub</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>将hexo发布</li>
@@ -204,6 +204,10 @@
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="comment">&lt;!-- more --&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h3 id="ico"><a href="#ico" class="headerlink" title="ico"></a>ico</h3><figure class="highlight yml"><figcaption><span>next-7.7.2/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">favicon:</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">/images/favicon-16x16-next.png</span></span><br><span class="line">  <span class="attr">medium:</span> <span class="string">/images/favicon-32x32-next.png</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文章引用"><a href="#文章引用" class="headerlink" title="文章引用"></a>文章引用</h3><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 新的文章 %&#125;</span><br></pre></td></tr></table></figure>
+
+<a href="/2020/04/04/%E6%96%B0%E7%9A%84%E6%96%87%E7%AB%A0/" title="新的文章">新的文章</a>
 
 
 
